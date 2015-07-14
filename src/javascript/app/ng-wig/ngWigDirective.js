@@ -22,7 +22,11 @@ angular.module('ngWig')
             options = prompt('Please enter the URL', 'http://');
           }
 
-          if(options) {
+          if (command === 'insertimage') {
+            options = prompt('Please enter an image URL to insert', 'http://');
+          }
+
+          if (options !== null) {
             scope.$emit('execCommand', {command: command, options: options});
           }
         };
